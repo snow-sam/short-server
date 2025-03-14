@@ -13,7 +13,7 @@ export class ShortyService {
     }
 
     shortUrl(ogUrl: string) {
-        const res = [...this.urls.values()].filter(({ ogUrl }) => ogUrl === ogUrl)
+        const res = [...this.urls.values()].filter((reg) => ogUrl === reg.ogUrl)
         if (res.length === 1) return res[0]
 
         const uuid = v4();
